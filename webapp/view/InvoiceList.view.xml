@@ -18,14 +18,21 @@
 					}, {
 						path: 'view>/currency'
 					}],
-					type: 'sap.ui.model.type.currency',
+					type: 'sap.ui.model.type.Currency',
 					formatOptions: {
 						showMeasure: false
 					}
 				}"
 				numberUnit="{view>/currency}"
-                numberState="{= ${invoice>ExtendedPrice} > 40 ? 'Error' : 'Success'}"
-			/>
+				numberState="{= ${invoice>ExtendedPrice} > 40 ? 'Error' : 'Success'}"
+			>
+				<firstStatus>
+                <ObjectStatus text="{
+                    path: 'invoice>Status',
+                    formatter: '.formatter.statusText'
+                }"></ObjectStatus>
+				</firstStatus>
+			</ObjectListItem>
 		</items>
 	</List>
 </mvc:View>
