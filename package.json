@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
-    "cm": "cz"
+    "cm": "cz",
+    "dev": "ui5 serve"
   },
   "author": "",
   "license": "ISC",
